@@ -9,7 +9,9 @@
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/jquery.fullPage.min.js"></script>
 	<script src="js/scrolloverflow.min.js"></script>
-	<script type="text/javascript">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="js/bootstrap.min.js"></script>
+	<script>
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
 				anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'lastPage'],//定义各个FullPage
@@ -30,12 +32,6 @@
 						$('div.returntop').show();
 					}
 				},
-				'afterLoad': function(anchorLink,index){
-					if(index == 3){
-						// $('#Leimu')
-					}
-
-				}
 			});
 		});
 
@@ -124,7 +120,7 @@
 		
 		.items {
 			float: left;
-			width: 250px;
+			width: 240px;
 			/*			border: 1px solid white;*/
 			/*			background-color: grey;*/
 			text-align: center;
@@ -145,6 +141,21 @@
 		.intro{
 			font-size: 25px;
 		}
+		.word_circle{
+			height: 100px;
+			width: 100px;
+			border-radius: 50px;
+			background-color: black;
+		}
+		.word_logo{
+			margin: 20px;
+			font-size: 70px;
+			font-family: Arial；
+		}
+		.demos{
+			float: left;
+			margin: 40px;
+		}
 		#myphoto{
 			border-radius: 75px;
 			width: 150px;
@@ -161,13 +172,26 @@
 	</style>
 </head>
 <body>
-	<ul id="menu">
-		<li data-menuanchor="firstPage" class="active"><a href="#firstPage">首页</a></li>
-		<li data-menuanchor="secondPage"><a href="#secondPage">关于我</a></li>
-		<li data-menuanchor="3rdPage"><a href="#3rdPage">专业技能</a></li>
-		<li data-menuanchor="4thPage"><a href="#4thPage">我的作品</a></li>
-		<li data-menuanchor="lastPage"><a href="#lastPage">联系方式</a></li>
-	</ul>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li data-menuanchor="firstPage"><a href="#firstPage">首页</a></li>
+					<li data-menuanchor="secondPage"><a href="#secondPage">关于我</a></li>
+					<li data-menuanchor="3rdPage"><a href="#3rdPage">专业技能</a></li>
+					<li data-menuanchor="4thPage"><a href="#4thPage">我的作品</a></li>
+					<li data-menuanchor="lastPage"><a href="#lastPage">联系方式</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<a href="#firstPage"><div class="returntop"></div></a>
 	<div id="fullpage">
 		<div class="section active" id="section0">
@@ -182,6 +206,8 @@
 			<h1 class="title">关于我</h1>
 			<hr style="width: 300px">
 			<h1 class="title_en">About Me</h1>
+			<br>
+			<br>
 			<div class="container">
 				<div class="items">
 					<p class="title">学历：本科</p>
@@ -204,6 +230,8 @@
 			<h1 class="title">专业技能</h1>
 			<hr style="width: 300px">
 			<h1 class="title_en">Skills</h1>
+			<br>
+			<br>
 			<div class="container_skils">
 				<div class="skills">
 					<li>HTML/CSS</li><p>熟悉W3C规范及HTML5、CSS</p>
@@ -229,33 +257,56 @@
 			<br>
 			<br>
 			<div class="container">
-				<div>				
+				<div class="demos">				
+					<p>技能树</p>
+					<div class="word_circle">		
+						<a href="https://juncaixinchi.github.io/Skill_Tree" target="_blank"><p class="word_logo">S</p></a>
+					</div>
+				</div>
+				<div class="demos">				
+					<p>生命计算器</p>
+					<div class="word_circle">		
+						<a href="https://juncaixinchi.github.io/Time" target="_blank"><p class="word_logo">T</p></a>
+					</div>
+				</div>
+				<div class="demos">				
+					<p>颜色拾取器</p>
+					<div class="word_circle">		
+						<a href="https://juncaixinchi.github.io/Color_Picker" target="_blank"><p class="word_logo">C</p></a>
+					</div>
+				</div>
+				<div class="demos">				
 					<p>自定义FGO英灵</p>
-					<a href="https://juncaixinchi.github.io/FGO/fgo.html" target="_blank"><img src="img/Leimu.png" alt="Leimu.png" height="200px" id="Leimu"></a>
+					<div class="word_circle">		
+						<a href="https://juncaixinchi.github.io/FGO/fgo.html" target="_blank"><p class="word_logo">F</p></a>
+					</div>
 				</div>
-<!-- 				<div class="items">
-					<p class="title">基于hexo的Blog</p>
-					<a href="Study_Note.html" target="_blank"><img src="img/note.png" alt="note.png" height="100px"></a>
-				</div>
-				<div class="items">
-					<p class="title">学习技能树</p>
-					<a href="Study_Note2.html" target="_blank"><img src="img/note.png" alt="note.png" height="100px"></a>
-				</div>  
-				颜色转换器-->
-			</div>
-
-		</div>
-		<div class="section" id="section4">
-			<h1 class="title">联系方式</h1>
-			<hr style="width: 300px">
-			<h1 class="title_en">Contacts</h1>
-			<div id="contact" style="width: 400px;margin:0 auto; text-align: left;">
-				<p class="intro" style="float: center"><img src="img/email.png" alt="email" width="30px" align="middle">&nbsp;&nbsp;lixinwei2017@foxmail.com</p>
-				<p class="intro" style="float: center"><img src="img/Github.png" alt="Github" width="30px" align="middle">&nbsp;&nbsp;github.com/juncaixinchi</p>
-			</div>
+<!--  
+				基于hexo的Blog
+					Documents of demos
+					Github Readme.md
+				GWAS: python+Django
+				bootstrap
+				基于hexo的Blog
+				React.js
+				Node.js
+			-->
 		</div>
 
 	</div>
+	<div class="section" id="section4">
+		<h1 class="title">联系方式</h1>
+		<hr style="width: 300px">
+		<h1 class="title_en">Contacts</h1>
+		<br>
+		<br>
+		<div id="contact" style="width: 400px;margin:0 auto; text-align: left;">
+			<p class="intro" style="float: center"><img src="img/email.png" alt="email" width="30px" align="middle">&nbsp;&nbsp;lixinwei2017@foxmail.com</p>
+			<p class="intro" style="float: center"><img src="img/Github.png" alt="Github" width="30px" align="middle">&nbsp;&nbsp;github.com/juncaixinchi</p>
+		</div>
+	</div>
+
+</div>
 
 </body>
 </html>
