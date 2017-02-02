@@ -20,145 +20,25 @@
 				loopBottom: true,//到底后返回首页
 				easingcss3: 'cubic-bezier(0.25, 0.1, 0.25, 1.1)',//回弹效果
 				scrollOverflow: true, //页面变长时可下拉
-				sectionsColor: ['#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF'], //
+				sectionsColor: ['#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF'], //设置各section的底色，使用背景图片时就不需要了
+				// sectionsColor: ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff'], //设置各section的底色，使用背景图片时就不需要了
+				// 'navigation': true,
+				// 'navigationPosition': 'right',//定义导航的小点点
 				'slidesNavigation': true,//定义Slide的导航小点点
 				'onLeave': function(index, nextIndex){ //Callback，到达第一页时使返回首页的按钮消失，非第一页则显示按钮
 					if(nextIndex == 1){
 						$('div.returntop').hide();
 					}else{
 						$('div.returntop').show();
-						$('div.slideDown').css('height','300px');
-					}
-				},
-				'afterLoad': function(anchorLink, index){ //Callback，到达某页时执行某页的动画
-					if(index == 1){
-						$('div.slideDown').animate({
-
-						});
-					}
-					else{
-						$('div.slideDown').animate({
-							height:'-=150px',
-						});
 					}
 				},
 			});
-			//首页第一次载入的动画
-			$('#proverb').animate({
-				width:'400px',
-			});
-
 		});
 
 	</script>
 	<style type="text/css">
-		li{
-			font-weight: bold;
-		}
-		hr{
-			border: 2px solid #C7D1C1;
-		}
-		.slideDown{
-			height: 300px;
-		}
 		.section{
 			text-align:center;
-		}
-
-		/*返回按钮格式*/
-		.returntop{
-			display:none;
-			height: 66px;
-			width: 70px;
-			background:url(img/bt_top.png) no-repeat;
-			background-size:auto 100%;
-			position:fixed;
-			bottom: 0px;
-			right: 0px;
-			cursor:pointer;
-			z-index:10;
-		}
-		/*文字内容样式*/
-		.Big_word
-		{
-			font-size: 70px;
-			color: white;
-		}
-		.title{
-			color: blue;
-			font-size: 30px;
-			line-height:1.2;
-		}
-		.title_en{
-			color: green;
-			font-size: 25px;
-			line-height:1.2;
-		}
-		.container {
-			width: 100%;
-			max-width: 1000px;
-			margin: 0px auto;
-		}
-
-		.items {
-			float: left;
-			width: 240px;
-			/*			border: 1px solid white;*/
-			/*			background-color: grey;*/
-			text-align: center;
-		}
-		.container_skils {
-			width: 100%;
-			max-width: 1000px;
-			margin: 0px auto;
-		}
-		.skills {
-			float: left;
-			width: 333px;
-			height: 200px;
-			/*			border: 1px solid white;*/
-			/*			background-color: grey;*/
-			text-align: center;
-		}
-		.intro{
-			font-size: 25px;
-		}
-		.word_circle{
-			height: 100px;
-			width: 100px;
-			border-radius: 50px;
-			background-color: black;
-			transition: transform 0.5s;
-			-moz-transition: -moz-transform 0.5s;
-			-webkit-transition: -webkit-transform 0.5s;
-			-o-transition: -o-transform 0.5s;
-		}
-		.word_logo{
-			margin: 20px;
-			font-size: 70px;
-			font-family: Arial；
-		}
-		.word_circle:hover
-		{
-			-moz-transform: rotate(360deg);
-			-webkit-transform: rotate(360deg);
-			-o-transform: rotate(360deg);
-			transform: rotate(360deg);
-			background:#BCC5EB;
-		}
-		.demos{
-			float: left;
-			margin: 66px;
-		}
-		/*关于我页面*/
-		.tips{
-			font-size: 35px;
-			font-family: Arial;
-			float: left;
-			width: 240px;
-/*			border: 1px solid blue;
-						background-color: grey;*/
-			text-align: center;
 		}
 		/*设置导航菜单的格式*/
 		#menu li {
@@ -203,6 +83,79 @@
 			margin:0;
 		}
 
+		/*返回按钮格式*/
+		.returntop{
+			display:none;
+			height: 66px;
+			width: 70px;
+			background:url(img/bt_top.png) no-repeat;
+			background-size:auto 100%;
+			position:fixed;
+			bottom: 0px;
+			right: 0px;
+			cursor:pointer;
+			z-index:10;
+		}
+		/*文字内容样式*/
+		.Big_word
+		{
+			font-size: 70px;
+			color: white;
+		}
+		.title{
+			color: blue;
+			font-size: 30px;
+			line-height:1.2;
+		}
+		.title_en{
+			color: green;
+			font-size: 25px;
+			line-height:1.2;
+		}
+		.container {
+			width: 100%;
+			max-width: 1000px;
+			margin: 0px auto;
+		}
+		
+		.items {
+			float: left;
+			width: 240px;
+			/*			border: 1px solid white;*/
+			/*			background-color: grey;*/
+			text-align: center;
+		}
+		.container_skils {
+			width: 100%;
+			max-width: 1000px;
+			margin: 0px auto;
+		}
+		.skills {
+			float: left;
+			width: 333px;
+			height: 200px;
+			/*			border: 1px solid white;*/
+			/*			background-color: grey;*/
+			text-align: center;
+		}
+		.intro{
+			font-size: 25px;
+		}
+		.word_circle{
+			height: 100px;
+			width: 100px;
+			border-radius: 50px;
+			background-color: black;
+		}
+		.word_logo{
+			margin: 20px;
+			font-size: 70px;
+			font-family: Arial；
+		}
+		.demos{
+			float: left;
+			margin: 70px;
+		}
 		#myphoto{
 			border-radius: 75px;
 			width: 150px;
@@ -211,14 +164,10 @@
 		#proverb{
 			font-size: 25px;
 			font-style: oblique;
-			width: 25px;
-			height: 35px;
-			margin: 0 auto;
-			overflow: hidden;
-			transition: width 5s;
-			-moz-transition: width 5s;
-			-webkit-transition: width 5s;
-			-o-transition: width 5s;
+
+		}
+		li{
+			font-weight: bold;
 		}
 	</style>
 </head>
@@ -247,131 +196,117 @@
 	<div id="fullpage">
 		<div class="section active" id="section0">
 			<img id="myphoto" src="img/me.jpg" alt="我的头像">
-			<div id="proverb">
-				<p>不知疲惫地翻越，每一座山丘！</p>
-			</div>
+			<p id="proverb">不知疲惫地翻越，每一座山丘！</p>
 			<hr style="width: 500px">
 			<p class="intro">我叫李新炜</p>
-			<p class="intro">目标是成为一名优秀的前端工程师</p>
-			<p class="intro">
-				<a href="mailto:lixinwei2017@foxmail.com?Subject=Resume" target="_top">
-					lixinwei2017@foxmail.com
-				</a>
-			</p>
+			<p class="intro">目前是在生物行业，希望转行做一名前端工程师</p>
+			<P class="intro">lixinwei2017@foxmail.com</P>
 		</div>
 		<div class="section" id="section1">
-			<div class="slideDown">
-				<h1 class="title">关于我</h1>
-				<hr style="width: 300px">
-				<h1 class="title_en">About Me</h1>
-			</div>
+			<h1 class="title">关于我</h1>
+			<hr style="width: 300px">
+			<h1 class="title_en">About Me</h1>
 			<br>
 			<br>
 			<div class="container">
-				<div class="tips">
-					<p>学历：本科</p>
+				<div class="items">
+					<p class="title">学历：本科</p>
 				</div>
-				<div class="tips">
-					<p>年龄：24岁</p>
+				<div class="items">
+					<p class="title">年龄：24岁</p>
 				</div>
-				<div class="tips">
-					<p>坐标：上海</p>
+				<div class="items">
+					<p class="title">坐标：上海</p>
 				</div>
-				<div class="tips">
-					<p>状态：在职</p>
+				<div class="items">
+					<p class="title">状态：在职</p>
 				</div>
 				<div style="clear: both;">
-					<br>
 					<p class="intro" style="line-height: 50px">2015年毕业于复旦大学，生物科学本科。<br>目前在一家生物公司就职，主要做生物产品研发。<br>但是考虑到发展前途等原因，正在自学web相关编程。<br>希望成为一名优秀的前端工程师！</p>
 				</div>
 			</div>
 		</div>
 		<div class="section" id="section2">
-			<div class="slideDown">
-				<h1 class="title">专业技能</h1>
-				<hr style="width: 300px">
-				<h1 class="title_en">Skills</h1>
-			</div>
+			<h1 class="title">专业技能</h1>
+			<hr style="width: 300px">
+			<h1 class="title_en">Skills</h1>
 			<br>
 			<br>
 			<div class="container_skils">
 				<div class="skills">
 					<li>HTML/CSS</li><p>熟悉W3C规范及HTML5、CSS</p>
 					<li>JavaScript</li><p>熟悉原生Javascript，jQuery等常见库的使用</p>
-					<li>&nbsp;&nbsp;Others&nbsp;&nbsp;</li><p>了解Ajax网络通信机制，能够构建响应式布局</p>
+					<li>Others</li><p>了解Ajax网络通信机制，构建响应式布局</p>
 				</div>
 				<div class="skills">
-					<li>编程语言</li><p>掌握JavaScript、Perl等语言</p>
-					<li>操作系统</li><p>熟悉Linux操作系统</p>
-					<li>开发工具</li><p>熟悉Vim、Sublime Text等编辑软件</p>
+					<li>编程语言</li><p>掌握JavaScript、Python、Perl等语言</p>
+					<li>系统</li><p>熟悉Linux操作系统</p>
+					<li>建站</li><p>能够运用Python+Django建站</p>
 				</div>
 				<div class="skills">
 					<li>英语能力</li><p>英语六级，能够熟练阅读英文资料</p>
-					<li>设计能力</li><p>熟练使用Adobe Photoshop、Illustrator等软件</p>
+					<li>设计能力</li><p>熟悉Adobe Photoshop、Illustrator等</p>
 					<li>学习能力</li><p>自学能力强，有较强的求知欲</p>
 				</div>
 			</div>
 		</div>
 		<div class="section" id="section3">
-			<div class="slideDown">
-				<h1 class="title">我的作品</h1>
-				<hr style="width: 300px">
-				<h1 class="title_en">Demos</h1>
-			</div>
+			<h1 class="title">我的作品</h1>
+			<hr style="width: 300px">
+			<h1 class="title_en">Demos</h1>
 			<br>
 			<br>
 			<div class="container">
 				<div class="demos">				
-					<li>技能树</li>
+					<p>技能树</p>
 					<div class="word_circle">		
 						<a href="https://juncaixinchi.github.io/Skill_Tree" target="_blank"><p class="word_logo">S</p></a>
 					</div>
 				</div>
 				<div class="demos">				
-					<li>生命计算器</li>
+					<p>生命计算器</p>
 					<div class="word_circle">		
 						<a href="https://juncaixinchi.github.io/Time" target="_blank"><p class="word_logo">T</p></a>
 					</div>
 				</div>
 				<div class="demos">				
-					<li>颜色拾取器</li>
+					<p>颜色拾取器</p>
 					<div class="word_circle">		
 						<a href="https://juncaixinchi.github.io/Color_Picker" target="_blank"><p class="word_logo">C</p></a>
 					</div>
 				</div>
 				<div class="demos">				
-					<li>自定义FGO英灵</li>
+					<p>自定义FGO英灵</p>
 					<div class="word_circle">		
 						<a href="https://juncaixinchi.github.io/FGO/fgo.html" target="_blank"><p class="word_logo">F</p></a>
 					</div>
 				</div>
-<!-- 				基于hexo的Blog
+<!--  
+				基于hexo的Blog
 					Documents of demos
 					Github Readme.md
 				GWAS: python+Django
 				bootstrap
 				基于hexo的Blog
 				React.js
-				Node.js -->
-			</div>
+				Node.js
+			-->
 		</div>
-		<div class="section" id="section4">
-			<div class="slideDown">
-				<h1 class="title">联系方式</h1>
-				<hr style="width: 300px">
-				<h1 class="title_en">Contacts</h1>
-			</div>
-			<br>
-			<br>
-			<div id="contact" style="width: 400px;margin:0 auto; text-align: left;">
-				<a href="mailto:lixinwei2017@foxmail.com?Subject=Resume" target="_top">
-					<p class="intro" style="float: center"><img src="img/email.png" alt="email" width="30px" align="middle">&nbsp;&nbsp;lixinwei2017@foxmail.com</p>
-				</a>
-				<a href="https://github.com/juncaixinchi" target="_top">
-					<p class="intro" style="float: center"><img src="img/Github.png" alt="Github" width="30px" align="middle">&nbsp;&nbsp;github.com/juncaixinchi</p>
-				</a>
-			</div>
+
+	</div>
+	<div class="section" id="section4">
+		<h1 class="title">联系方式</h1>
+		<hr style="width: 300px">
+		<h1 class="title_en">Contacts</h1>
+		<br>
+		<br>
+		<div id="contact" style="width: 400px;margin:0 auto; text-align: left;">
+			<p class="intro" style="float: center"><img src="img/email.png" alt="email" width="30px" align="middle">&nbsp;&nbsp;lixinwei2017@foxmail.com</p>
+			<p class="intro" style="float: center"><img src="img/Github.png" alt="Github" width="30px" align="middle">&nbsp;&nbsp;github.com/juncaixinchi</p>
 		</div>
 	</div>
+
+</div>
+
 </body>
 </html>
