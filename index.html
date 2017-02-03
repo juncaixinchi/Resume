@@ -20,7 +20,7 @@
 				loopBottom: true,//到底后返回首页
 				easingcss3: 'cubic-bezier(0.25, 0.1, 0.25, 1.1)',//回弹效果
 				scrollOverflow: true, //页面变长时可下拉
-				sectionsColor: ['#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF'], //
+				// sectionsColor: ['#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF'], 
 				'slidesNavigation': true,//定义Slide的导航小点点
 				'onLeave': function(index, nextIndex){ //Callback，到达第一页时使返回首页的按钮消失，非第一页则显示按钮
 					if(nextIndex == 1){
@@ -31,19 +31,12 @@
 					}
 				},
 				'afterLoad': function(anchorLink, index){ //Callback，到达某页时执行某页的动画
-					if(index == 1){
-						$('div.slideDown').animate({
-
-						});
-					}
-					else{
 						$('div.slideDown').css('height','300px');//再设置一次，以防快速换页时出bug
 						$('div.slideDown').animate({
 							height:'-=150px',
 						});
-					}
-				},
-			});
+					},
+				});
 			//首页第一次载入的动画
 			$('#proverb').animate({
 				width:'400px',
@@ -52,6 +45,10 @@
 
 	</script>
 	<style type="text/css">
+		body { 
+			background: linear-gradient(-45deg, #F2F2F2 25%, #F5F5F5 0, #F5F5F5 50%, #F2F2F2 0, #F2F2F2 75%, #F5F5F5 0);
+			background-size: 100px 100px;
+		}
 		li{
 			font-weight: bold;
 		}
@@ -119,6 +116,7 @@
 			/*			border: 1px solid white;*/
 			/*			background-color: grey;*/
 			text-align: center;
+			/*			display: none;*/
 		}
 		.intro{
 			font-size: 25px;
@@ -156,71 +154,71 @@
 			font-family: Arial;
 			float: left;
 			width: 240px;
-/*			border: 1px solid blue;
-background-color: grey;*/
-text-align: center;
-}
-/*设置导航菜单的格式*/
-#menu li {
-	display:inline-block;
-	margin: 5px;
-	color: #000;
-	background:#fff;
-	background: rgba(255,255,255, 0.5);
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-}
-#menu li.active{
-	background:#666;
-	background: rgba(0,0,0, 0.5);
-	color: #fff;
-}
-#menu li a{
-	text-decoration:none;
-	color: #000;
-}
-#menu li.active a:hover{
-	color: #000;
-}
-#menu li:hover{
-	background: rgba(255,255,255, 0.8);
-}
-#menu li a,
-#menu li.active a{
-	padding: 9px 18px;
-	display:block;
-}
-#menu li.active a{
-	color: #fff;
-}
-#menu{
-	position:fixed;
-	text-align: right;
-	height: 40px;
-	z-index: 4;
-	width: 100%;
-	padding: 0;
-	margin:0;
-}
+			color: grey;
+			/*border: 1px solid blue;*/
+			text-align: center;
+		}
+		/*设置导航菜单的格式*/
+		#menu li {
+			display:inline-block;
+			margin: 5px;
+			color: #000;
+			background:#fff;
+			background: rgba(255,255,255, 0.5);
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+		}
+		#menu li.active{
+			background:#666;
+			background: rgba(0,0,0, 0.5);
+			color: #fff;
+		}
+		#menu li a{
+			text-decoration:none;
+			color: #000;
+		}
+		#menu li.active a:hover{
+			color: #000;
+		}
+		#menu li:hover{
+			background: rgba(255,255,255, 0.8);
+		}
+		#menu li a,
+		#menu li.active a{
+			padding: 9px 18px;
+			display:block;
+		}
+		#menu li.active a{
+			color: #fff;
+		}
+		#menu{
+			position:fixed;
+			text-align: right;
+			height: 40px;
+			z-index: 4;
+			width: 100%;
+			padding: 0;
+			margin:0;
+		}
 
-#myphoto{
-	border-radius: 75px;
-	width: 150px;
-	height: 150px;
-}
-#proverb{
-	font-size: 25px;
-	font-style: oblique;
-	width: 25px;
-	height: 35px;
-	margin: 0 auto;
-	overflow: hidden;
-	transition: width 5s;
-	-moz-transition: width 5s;
-	-webkit-transition: width 5s;
-	-o-transition: width 5s;
-}
-</style>
+		#myphoto{
+			border-radius: 75px;
+			width: 150px;
+			height: 150px;
+		}
+		#proverb{
+			font-size: 25px;
+			font-style: oblique;
+			width: 25px;
+			height: 35px;
+			margin: 0 auto;
+			overflow: hidden;
+			transition: width 5s;
+			-moz-transition: width 5s;
+			-webkit-transition: width 5s;
+			-o-transition: width 5s;
+		}
+	</style>
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
