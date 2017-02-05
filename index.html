@@ -11,214 +11,8 @@
 	<script src="js/scrolloverflow.min.js"></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<script src="js/bootstrap.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'lastPage'],//定义各个FullPage
-				menu: '#menu',//定义菜单
-				loopTop: true,
-				loopBottom: true,//到底后返回首页
-				easingcss3: 'cubic-bezier(0.25, 0.1, 0.25, 1.1)',//回弹效果
-				scrollOverflow: true, //页面变长时可下拉
-				// sectionsColor: ['#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF', '#F0F8FF'], 
-				'slidesNavigation': true,//定义Slide的导航小点点
-				'onLeave': function(index, nextIndex){ //Callback，到达第一页时使返回首页的按钮消失，非第一页则显示按钮
-					if(nextIndex == 1){
-						$('div.returntop').hide();
-					}else{
-						$('div.returntop').show();
-						$('div.slideDown').css('height','300px');
-					}
-				},
-				'afterLoad': function(anchorLink, index){ //Callback，到达某页时执行某页的动画
-						$('div.slideDown').css('height','300px');//再设置一次，以防快速换页时出bug
-						$('div.slideDown').animate({
-							height:'-=150px',
-						});
-					},
-				});
-			//首页第一次载入的动画
-			$('#proverb').animate({
-				width:'400px',
-			});
-		});
-
-	</script>
-	<style type="text/css">
-		body { 
-			background: linear-gradient(-45deg, #F2F2F2 25%, #F5F5F5 0, #F5F5F5 50%, #F2F2F2 0, #F2F2F2 75%, #F5F5F5 0);
-			background-size: 100px 100px;
-		}
-		li{
-			font-weight: bold;
-		}
-		hr{
-			border: 2px solid #C7D1C1;
-		}
-		.slideDown{
-			height: 300px;
-		}
-		.section{
-			text-align:center;
-		}
-
-		/*返回按钮格式*/
-		.returntop{
-			display:none;
-			height: 66px;
-			width: 70px;
-			background:url(img/bt_top.png) no-repeat;
-			background-size:auto 100%;
-			position:fixed;
-			bottom: 0px;
-			right: 0px;
-			cursor:pointer;
-			z-index:10;
-		}
-		/*文字内容样式*/
-		.Big_word
-		{
-			font-size: 70px;
-			color: white;
-		}
-		.title{
-			color: blue;
-			font-size: 30px;
-			line-height:1.2;
-		}
-		.title_en{
-			color: green;
-			font-size: 25px;
-			line-height:1.2;
-		}
-		.container {
-			width: 100%;
-			max-width: 1000px;
-			margin: 0px auto;
-		}
-
-		.items {
-			float: left;
-			width: 240px;
-			/*			border: 1px solid white;*/
-			/*			background-color: grey;*/
-			text-align: center;
-		}
-		.container_skils {
-			width: 100%;
-			max-width: 1000px;
-			margin: 0px auto;
-		}
-		.skills {
-			float: left;
-			width: 333px;
-			height: 200px;
-			/*			border: 1px solid white;*/
-			/*			background-color: grey;*/
-			text-align: center;
-			/*			display: none;*/
-		}
-		.intro{
-			font-size: 25px;
-		}
-		.word_circle{
-			height: 100px;
-			width: 100px;
-			border-radius: 50px;
-			background-color: black;
-			transition: transform 0.5s;
-			-moz-transition: -moz-transform 0.5s;
-			-webkit-transition: -webkit-transform 0.5s;
-			-o-transition: -o-transform 0.5s;
-		}
-		.word_logo{
-			margin: 20px;
-			font-size: 70px;
-			font-family: Arial；
-		}
-		.word_circle:hover
-		{
-			-moz-transform: rotate(360deg);
-			-webkit-transform: rotate(360deg);
-			-o-transform: rotate(360deg);
-			transform: rotate(360deg);
-			background:#BCC5EB;
-		}
-		.demos{
-			float: left;
-			margin: 66px;
-		}
-		/*关于我页面*/
-		.tips{
-			font-size: 35px;
-			font-family: Arial;
-			float: left;
-			width: 240px;
-			color: grey;
-			/*border: 1px solid blue;*/
-			text-align: center;
-		}
-		/*设置导航菜单的格式*/
-		#menu li {
-			display:inline-block;
-			margin: 5px;
-			color: #000;
-			background:#fff;
-			background: rgba(255,255,255, 0.5);
-			-webkit-border-radius: 10px;
-			border-radius: 10px;
-		}
-		#menu li.active{
-			background:#666;
-			background: rgba(0,0,0, 0.5);
-			color: #fff;
-		}
-		#menu li a{
-			text-decoration:none;
-			color: #000;
-		}
-		#menu li.active a:hover{
-			color: #000;
-		}
-		#menu li:hover{
-			background: rgba(255,255,255, 0.8);
-		}
-		#menu li a,
-		#menu li.active a{
-			padding: 9px 18px;
-			display:block;
-		}
-		#menu li.active a{
-			color: #fff;
-		}
-		#menu{
-			position:fixed;
-			text-align: right;
-			height: 40px;
-			z-index: 4;
-			width: 100%;
-			padding: 0;
-			margin:0;
-		}
-
-		#myphoto{
-			border-radius: 75px;
-			width: 150px;
-			height: 150px;
-		}
-		#proverb{
-			font-size: 25px;
-			font-style: oblique;
-			width: 25px;
-			height: 35px;
-			margin: 0 auto;
-			overflow: hidden;
-			transition: width 5s;
-			-moz-transition: width 5s;
-			-webkit-transition: width 5s;
-			-o-transition: width 5s;
-		}
-	</style>
+	<script src="js/Resume.js"></script>
+	<link href="css/Resume.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -232,7 +26,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li data-menuanchor="firstPage"><a href="#firstPage">首页</a></li>
+					<li data-menuanchor="firstPage"><a href="#firstPage" target="">首页</a></li>
 					<li data-menuanchor="secondPage"><a href="#secondPage">关于我</a></li>
 					<li data-menuanchor="3rdPage"><a href="#3rdPage">专业技能</a></li>
 					<li data-menuanchor="4thPage"><a href="#4thPage">我的作品</a></li>
@@ -249,38 +43,39 @@
 				<p>不知疲惫地翻越，每一座山丘！</p>
 			</div>
 			<hr style="width: 500px">
-			<p class="intro">我叫李新炜</p>
-			<p class="intro">目标是成为一名优秀的前端工程师</p>
-			<p class="intro">
-				<a href="mailto:lixinwei2017@foxmail.com?Subject=Resume" target="_top">
-					lixinwei2017@foxmail.com
-				</a>
-			</p>
+			<div class="intro">
+				<p>我叫李新炜</p>
+				<p>目标是成为一名优秀的前端工程师</p>
+				<p>
+					<a href="mailto:lixinwei2017@foxmail.com?Subject=Resume" target="_top">
+						lixinwei2017@foxmail.com
+					</a>
+				</p>
+			</div>
 		</div>
 		<div class="section" id="section1">
 			<div class="slideDown">
 				<h1 class="title">关于我</h1>
 				<hr style="width: 300px">
-				<h1 class="title_en">About Me</h1>
+				<h1 class="title_en">·About Me·</h1>
 			</div>
 			<br>
-			<br>
-			<div class="container">
+			<div class="container_tips">
 				<div class="tips">
-					<p>学历：本科</p>
+					<img src="img/education_w.png" height="75px">
 				</div>
 				<div class="tips">
-					<p>年龄：24岁</p>
+					<img src="img/age_w.png" height="75px">
 				</div>
 				<div class="tips">
-					<p>坐标：上海</p>
+					<img src="img/location_w.png" height="75px">
 				</div>
 				<div class="tips">
-					<p>状态：在职</p>
+					<img src="img/light_w.png" height="75px">
 				</div>
-				<div style="clear: both;">
+				<div class="intro_me">
 					<br>
-					<p class="intro" style="line-height: 50px">2015年毕业于复旦大学，生物科学本科。<br>目前在一家生物公司就职，主要做生物产品研发。<br>但是考虑到发展前途等原因，正在自学web相关编程。<br>希望成为一名优秀的前端工程师！</p>
+					<p>2015年毕业于复旦大学，生物科学本科<br>目前在一家生物公司就职，主要做生物产品研发<br>但是考虑到发展前途等原因，正在自学web相关编程<br>希望成为一名优秀的前端工程师！</p>
 				</div>
 			</div>
 		</div>
@@ -288,11 +83,11 @@
 			<div class="slideDown">
 				<h1 class="title">专业技能</h1>
 				<hr style="width: 300px">
-				<h1 class="title_en">Skills</h1>
+				<h1 class="title_en">·Skills·</h1>
 			</div>
 			<br>
 			<br>
-			<div class="container_skils">
+			<div class="container_skills">
 				<div class="skills">
 					<li>HTML/CSS</li><p>熟悉W3C规范及HTML5、CSS</p>
 					<li>JavaScript</li><p>熟悉原生Javascript，jQuery等常见库的使用</p>
@@ -311,37 +106,65 @@
 			</div>
 		</div>
 		<div class="section" id="section3">
-			<div class="slideDown">
+			<div class="demo_fixed">
 				<h1 class="title">我的作品</h1>
 				<hr style="width: 300px">
-				<h1 class="title_en">Demos</h1>
+				<h1 class="title_en">·Demos·</h1>
 			</div>
-			<br>
-			<br>
-			<div class="container">
-				<div class="demos">				
-					<li>技能树</li>
+			<div class="slide demos" id="slide1">
+				<div class="demo_info">
 					<div class="word_circle">		
-						<a href="https://juncaixinchi.github.io/Skill_Tree" target="_blank"><p class="word_logo">S</p></a>
+						<a href="https://juncaixinchi.github.io/Skill_Tree" target="_blank"><p>S</p></a>
 					</div>
+					<p class="demo_title">前端工程师技能树</p>
 				</div>
-				<div class="demos">				
-					<li>生命计算器</li>
-					<div class="word_circle">		
-						<a href="https://juncaixinchi.github.io/Time" target="_blank"><p class="word_logo">T</p></a>
-					</div>
+				<br>
+				<li class="demo_intro">利用 oncotree  的代码，替换其数据内容，制作了前端工程师技能树，主要用作学习指导与复习</li>
+				<br>
+				<div class="demo_pic">
+					<a href="https://juncaixinchi.github.io/Skill_Tree" target="_blank"><img src="img/skill.png" height="200px"></a>
 				</div>
-				<div class="demos">				
-					<li>颜色拾取器</li>
+			</div>
+			<div class="slide demos" id="slide2">
+				<div class="demo_info">
 					<div class="word_circle">		
-						<a href="https://juncaixinchi.github.io/Color_Picker" target="_blank"><p class="word_logo">C</p></a>
+						<a href="https://juncaixinchi.github.io/Time/" target="_blank"><p>S</p></a>
 					</div>
+					<p class="demo_title">生命计算器</p>
 				</div>
-				<div class="demos">				
-					<li>自定义FGO英灵</li>
+				<br>
+				<li class="demo_intro">输入生日计算从出生到现在的年、天、小时、秒等。练习了 setTimeout 及 date的用法。 </li>
+				<br>
+				<div class="demo_pic">
+					<a href="https://juncaixinchi.github.io/Time/" target="_blank"><img src="img/Time.png" height="200px"></a>
+				</div>
+			</div>
+			<div class="slide demos" id="slide3">
+				<div class="demo_info">
 					<div class="word_circle">		
-						<a href="https://juncaixinchi.github.io/FGO/fgo.html" target="_blank"><p class="word_logo">F</p></a>
+						<a href="https://juncaixinchi.github.io/FGO/fgo.html" target="_blank"><p>S</p></a>
 					</div>
+					<p class="demo_title">FGO自定英灵卡面</p>
+				</div>
+				<br>
+				<li class="demo_intro">作为学习 HTML5 的练习作品，用户可上传图片，确定参数，然后生成 FGO（某手游）的英灵卡面。</li>
+				<br>
+				<div class="demo_pic">
+					<a href="https://juncaixinchi.github.io/FGO/fgo.html" target="_blank"><img src="img/FGO.png" height="200px"></a>
+				</div>
+			</div>
+			<div class="slide demos active" id="slide4">
+				<div class="demo_info">
+					<div class="word_circle">		
+						<a href="https://juncaixinchi.github.io/Color_Picker/" target="_blank"><p>S</p></a>
+					</div>
+					<p class="demo_title">颜色拾取器</p>
+				</div>
+				<br>
+				<li class="demo_intro">利用了 HTML5 的表单，参考 wikipedia 的颜色格式转化公式，通过 HSL 自定义颜色，实时显示并转化成 RGB、十六进制等格式。 </li>
+				<br>
+				<div class="demo_pic">
+					<a href="https://juncaixinchi.github.io/Color_Picker/" target="_blank"><img src="img/color.png" height="200px"></a>
 				</div>
 			</div>
 		</div>
@@ -349,7 +172,7 @@
 			<div class="slideDown">
 				<h1 class="title">联系方式</h1>
 				<hr style="width: 300px">
-				<h1 class="title_en">Contacts</h1>
+				<h1 class="title_en">·Contacts·</h1>
 			</div>
 			<br>
 			<br>
@@ -360,7 +183,7 @@
 				<a href="https://github.com/juncaixinchi" target="_top">
 					<p class="intro" style="float: center"><img src="img/Github.png" alt="Github" width="30px" align="middle">&nbsp;&nbsp;github.com/juncaixinchi</p>
 				</a>
-				<p class="intro" style="float: center"><img src="img/wechat.png" alt="wechat" width="30px" align="middle">&nbsp;&nbsp;juncaixinchi123</p>
+				<p class="intro" style="float: center;color: #428BCA"><img src="img/wechat.png" alt="wechat" width="30px" align="middle">&nbsp;&nbsp;juncaixinchi123</p>
 			</div>
 		</div>
 	</div>
