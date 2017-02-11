@@ -28,4 +28,16 @@ $(document).ready(function() {
 	$('#proverb').animate({
 		width:'400px',
 	});
+	resize();
 });
+function resize(){
+	width=document.body.clientWidth;
+	if(width<=900)
+	{
+		$('.skills').css('font-size','10px');
+	}
+	else
+	{
+		$('.skills').css('font-size','14px');
+	}
+}
