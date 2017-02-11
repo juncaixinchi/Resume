@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>李新炜的个人简历</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="img/L.ico">
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+	<script src="js/scrolloverflow.min.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/Resume.js"></script>
+	<link href="css/Resume.css" rel="stylesheet" type="text/css">
+</head>
+<body onresize="resize()">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li data-menuanchor="firstPage"><a href="#firstPage" target="">首页</a></li>
+					<li data-menuanchor="secondPage"><a href="#secondPage">关于我</a></li>
+					<li data-menuanchor="3rdPage"><a href="#3rdPage">专业技能</a></li>
+					<li data-menuanchor="4thPage"><a href="#4thPage">我的作品</a></li>
+					<li data-menuanchor="lastPage"><a href="#lastPage">联系方式</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<a href="#firstPage"><div class="returntop"></div></a>
+	<div id="fullpage">
+		<div class="section active" id="section0">
+			<img id="myphoto" src="img/me.jpg" alt="我的头像">
+			<div id="proverb">
+				<p>不知疲惫地翻越，每一座山丘！</p>
+			</div>
+			<hr style="width: 500px">
+			<div class="intro">
+				<p>我叫李新炜</p>
+				<p>目标是成为一名优秀的前端工程师</p>
+				<p>
+					<a href="mailto:lixinwei2017@foxmail.com?Subject=Resume" target="_top">
+						lixinwei2017@foxmail.com
+					</a>
+				</p>
+			</div>
+		</div>
+		<div class="section" id="section1">
+			<div class="slideDown">
+				<h1 class="title">关于我</h1>
+				<hr style="width: 300px">
+				<h1 class="title_en">·About Me·</h1>
+			</div>
+			<br>
+			<div class="container_tips">
+				<div class="tips">
+					<img src="img/education_w.png" height="75px">
+				</div>
+				<div class="tips">
+					<img src="img/age_w.png" height="75px">
+				</div>
+				<div class="tips">
+					<img src="img/location_w.png" height="75px">
+				</div>
+				<div class="tips">
+					<img src="img/light_w.png" height="75px">
+				</div>
+				<div class="intro_me">
+					<br>
+					<p>2015年毕业于复旦大学，生物科学本科<br>已转行，目前是一名前端工程师，主攻React ！</p>
+				</div>
+			</div>
+		</div>
+		<div class="section" id="section2">
+			<div class="slideDown">
+				<h1 class="title">专业技能</h1>
+				<hr style="width: 300px">
+				<h1 class="title_en">·Skills·</h1>
+			</div>
+			<br>
+			<br>
+			<div class="container_skills">
+				<div class="skills">
+					<li>HTML/CSS</li><p>熟悉W3C规范及HTML5、CSS</p>
+					<li>JavaScript</li><p>熟悉原生Javascript，jQuery等常见库的使用</p>
+					<li>&nbsp;&nbsp;Others&nbsp;&nbsp;</li><p>了解Ajax网络通信机制，能够构建响应式布局</p>
+				</div>
+				<div class="skills">
+					<li>编程语言</li><p>掌握JavaScript、Perl等语言</p>
+					<li>操作系统</li><p>熟悉Linux操作系统</p>
+					<li>开发工具</li><p>熟悉Vim、Sublime Text等编辑软件</p>
+				</div>
+				<div class="skills">
+					<li>英语能力</li><p>英语六级，能够熟练阅读英文资料</p>
+					<li>设计能力</li><p>熟练使用Adobe Photoshop、Illustrator等软件</p>
+					<li>学习能力</li><p>自学能力强，有较强的求知欲</p>
+				</div>
+			</div>
+		</div>
+		<div class="section" id="section3">
+			<div class="demo_fixed">
+				<h1 class="title">我的作品</h1>
+				<hr style="width: 300px">
+				<h1 class="title_en">·Demos·</h1>
+			</div>
+			<div class="slide" id="slide1">
+				<div class="demo_info">
+					<div class="word_circle">		
+						<a href="https://juncaixinchi.github.io/Skill_Tree" target="_blank"><p>S</p></a>
+					</div>
+					<p class="demo_title">前端工程师技能树</p>
+				</div>
+				<br>
+				<li class="demo_intro">利用 oncotree  的代码，替换其数据内容，制作了前端工程师技能树，主要用作学习指导与复习</li>
+				<br>
+				<div class="demo_pic">
+					<a href="https://juncaixinchi.github.io/Skill_Tree" target="_blank"><img src="img/skill.png" height="200px"></a>
+				</div>
+			</div>
+			<div class="slide" id="slide2">
+				<div class="demo_info">
+					<div class="word_circle">		
+						<a href="https://juncaixinchi.github.io/Time/" target="_blank"><p>T</p></a>
+					</div>
+					<p class="demo_title">生命计算器</p>
+				</div>
+				<br>
+				<li class="demo_intro">输入生日计算从出生到现在的年、天、小时、秒等。练习了 setTimeout 及 date的用法。 </li>
+				<br>
+				<div class="demo_pic">
+					<a href="https://juncaixinchi.github.io/Time/" target="_blank"><img src="img/Time.png" height="200px"></a>
+				</div>
+			</div>
+			<div class="slide" id="slide3">
+				<div class="demo_info">
+					<div class="word_circle">		
+						<a href="https://juncaixinchi.github.io/FGO/fgo.html" target="_blank"><p>F</p></a>
+					</div>
+					<p class="demo_title">FGO自定英灵卡面</p>
+				</div>
+				<br>
+				<li class="demo_intro">作为学习 HTML5 的练习作品，用户可上传图片，确定参数，然后生成 FGO（某手游）的英灵卡面。</li>
+				<br>
+				<div class="demo_pic">
+					<a href="https://juncaixinchi.github.io/FGO/fgo.html" target="_blank"><img src="img/FGO.png" height="200px"></a>
+				</div>
+			</div>
+			<div class="slide active" id="slide4">
+				<div class="demo_info">
+					<div class="word_circle">		
+						<a href="https://juncaixinchi.github.io/Color_Picker/" target="_blank"><p>C</p></a>
+					</div>
+					<p class="demo_title">颜色拾取器</p>
+				</div>
+				<br>
+				<li class="demo_intro">利用了 HTML5 的表单，参考 wikipedia 的颜色格式转化公式，通过 HSL 自定义颜色，实时显示并转化成 RGB、十六进制等格式。 </li>
+				<br>
+				<div class="demo_pic">
+					<a href="https://juncaixinchi.github.io/Color_Picker/" target="_blank"><img src="img/color.png" height="200px"></a>
+				</div>
+			</div>
+		</div>
+		<div class="section" id="section4">
+			<div class="slideDown">
+				<h1 class="title">联系方式</h1>
+				<hr style="width: 300px">
+				<h1 class="title_en">·Contacts·</h1>
+			</div>
+			<br>
+			<br>
+			<div id="contact" style="width: 400px;margin:0 auto; text-align: left;">
+				<a href="mailto:lixinwei2017@foxmail.com?Subject=Resume" target="_top">
+					<p class="intro" style="float: center"><img src="img/email.png" alt="email" width="30px" align="middle">&nbsp;&nbsp;lixinwei2017@foxmail.com</p>
+				</a>
+				<a href="https://github.com/juncaixinchi" target="_top">
+					<p class="intro" style="float: center"><img src="img/Github.png" alt="Github" width="30px" align="middle">&nbsp;&nbsp;github.com/juncaixinchi</p>
+				</a>
+				<p class="intro" style="float: center;color: #428BCA"><img src="img/wechat.png" alt="wechat" width="30px" align="middle">&nbsp;&nbsp;juncaixinchi123</p>
+			</div>
+		</div>
+	</div>
+	<div hidden="hidden"><script src="https://s4.cnzz.com/z_stat.php?id=1261118677&web_id=1261118677" language="JavaScript"></script>
+		<!-- 使用CNZZ的站长统计 ( ‵▽′)ψ -->
+	</div>
+</body>
+</html>
